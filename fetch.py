@@ -1,5 +1,8 @@
 #!/usr/bin/python -u
 
+import better_exchook
+better_exchook.install()
+
 # NOTE: I had to make a few fixes on mechanize and I also added images support.
 # So, in case this isn't upstream yet, you have to get mechanize from here:
 #   https://github.com/albertz/mechanize
