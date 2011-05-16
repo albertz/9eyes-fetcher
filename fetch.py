@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python -u
 
 # NOTE: I had to make a few fixes on mechanize and I also added images support.
 # So, in case this isn't upstream yet, you have to get mechanize from here:
@@ -17,9 +17,11 @@ def filename_for_url(url):
 
 def fetch(url):
 	fn = filename_for_url(url)
+	print fn, "...",
 	import urllib2
+	open(fn, "w").write( urllib2.urlopen(url).read() )
+	print "fetched"
 	
-
 i = 1
 while True:
 	br.open(baseurl + "page/" + str(i))
